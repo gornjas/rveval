@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BaliProject version="3.2" title="picoRV32" device="LFE5U-12F-6BG381C" default_implementation="impl">
+<BaliProject version="3.2" title="picoRV32" device="LFE5U-25F-6BG381C" default_implementation="impl">
     <Options/>
     <Implementation title="impl" dir="impl" description="impl" synthesis="synplify" default_strategy="Strategy1">
         <Options def_top="top_synth">

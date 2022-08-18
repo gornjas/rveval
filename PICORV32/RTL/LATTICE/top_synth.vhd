@@ -232,10 +232,10 @@ begin
 					
     ram: entity work.ram_memory(rtl)
     generic map (
-	SIZE_BYTES => 32768
+	SIZE_BYTES => 65536
     )
     port map(
-	bus_addr => bus_addr(14 downto 0),
+	bus_addr => bus_addr(15 downto 0),
 	bus_wdata => bus_wdata,
 	bus_rdata => ram_bus_rdata,
 	bus_wstrb => bus_wstrb,
