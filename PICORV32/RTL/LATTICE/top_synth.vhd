@@ -102,61 +102,60 @@ architecture structural of top_synth is
     );
     end component;
 	
-	component sdrc_top
-	port(
-			sdram_clk: in std_logic; --SDRAM Clock 
-			sdram_resetn: in std_logic; --Reset Signal
-			cfg_sdr_width: in std_logic_vector(1 downto 0); -- 2'b00 - 32 Bit SDR, 2'b01 - 16 Bit SDR, 2'b1x - 8 Bit
-			cfg_colbits: in std_logic_vector(1 downto 0); -- 2'b00 - 8 Bit column address, 
-														 -- 2'b01 - 9 Bit, 10 - 10 bit, 11 - 11Bits
+    component sdrc_top
+    port (
+	sdram_clk: in std_logic; --SDRAM Clock
+	sdram_resetn: in std_logic; --Reset Signal
+	cfg_sdr_width: in std_logic_vector(1 downto 0); -- 2'b00 - 32 Bit SDR, 2'b01 - 16 Bit SDR, 2'b1x - 8 Bit
+	cfg_colbits: in std_logic_vector(1 downto 0); -- 2'b00 - 8 Bit column address,
+	 -- 2'b01 - 9 Bit, 10 - 10 bit, 11 - 11Bits
 
-			--------------------------------------
-			--Wish Bone Interface
-			-------------------------------------      
-			wb_rst_i: in std_logic;
-			wb_clk_i: in std_logic;
+	-------------------------------------
+	--Wish Bone Interface
+	-------------------------------------
+	wb_rst_i: in std_logic;
+	wb_clk_i: in std_logic;
 
-			wb_stb_i: in std_logic;
-			wb_ack_o: out std_logic;
-			wb_addr_i: in std_logic_vector(25 downto 0);
-			wb_we_i: in std_logic; -- 1 - Write, 0 - Read
-			wb_dat_i: in std_logic_vector(31 downto 0);
-			wb_sel_i: in std_logic_vector(3 downto 0); -- Byte enable
-			wb_dat_o: out std_logic_vector(31 downto 0);
-			wb_cyc_i: in std_logic;
-			wb_cti_i: in std_logic_vector(2 downto 0);
+	wb_stb_i: in std_logic;
+	wb_ack_o: out std_logic;
+	wb_addr_i: in std_logic_vector(25 downto 0);
+	wb_we_i: in std_logic; -- 1 - Write, 0 - Read
+	wb_dat_i: in std_logic_vector(31 downto 0);
+	wb_sel_i: in std_logic_vector(3 downto 0); -- Byte enable
+	wb_dat_o: out std_logic_vector(31 downto 0);
+	wb_cyc_i: in std_logic;
+	wb_cti_i: in std_logic_vector(2 downto 0);
 
-			------------------------------------------------
-			-- Interface to SDRAMs
-			------------------------------------------------
-			sdr_cke: out std_logic; -- SDRAM CKE
-			sdr_cs_n: out std_logic;            -- SDRAM Chip Select
-			sdr_ras_n: out std_logic; -- SDRAM ras
-			sdr_cas_n: out std_logic; -- SDRAM cas
-			sdr_we_n: out std_logic; -- SDRAM write enable
-			sdr_dqm: out std_logic_vector(1 downto 0); -- SDRAM Data Mask
-			sdr_ba: out std_logic_vector(1 downto 0); -- SDRAM Bank Enable
-			sdr_addr: out std_logic_vector(12 downto 0); -- SDRAM Address
-			sdr_dq: inout std_logic_vector(15 downto 0); -- SDRA Data Input/output
+	------------------------------------------------
+	-- Interface to SDRAMs
+	------------------------------------------------
+	sdr_cke: out std_logic; -- SDRAM CKE
+	sdr_cs_n: out std_logic;            -- SDRAM Chip Select
+	sdr_ras_n: out std_logic; -- SDRAM ras
+	sdr_cas_n: out std_logic; -- SDRAM cas
+	sdr_we_n: out std_logic; -- SDRAM write enable
+	sdr_dqm: out std_logic_vector(1 downto 0); -- SDRAM Data Mask
+	sdr_ba: out std_logic_vector(1 downto 0); -- SDRAM Bank Enable
+	sdr_addr: out std_logic_vector(12 downto 0); -- SDRAM Address
+	sdr_dq: inout std_logic_vector(15 downto 0); -- SDRA Data Input/output
 
-			------------------------------------------------
-			-- Configuration Parameter
-			------------------------------------------------
-			sdr_init_done: out std_logic; -- Indicate SDRAM Initialisation Done
-			cfg_sdr_tras_d: in std_logic_vector(3 downto 0); -- Active to precharge delay
-			cfg_sdr_trp_d: in std_logic_vector(3 downto 0); -- Precharge to active delay
-			cfg_sdr_trcd_d: in std_logic_vector(3 downto 0); -- Active to R/W delay
-			cfg_sdr_en: in std_logic; -- Enable SDRAM controller
-			cfg_req_depth: in std_logic_vector(1 downto 0); --Maximum Request accepted by SDRAM controller
-			cfg_sdr_mode_reg: in std_logic_vector(12 downto 0);
-			cfg_sdr_cas: in std_logic_vector(2 downto 0); -- SDRAM CAS Latency
-			cfg_sdr_trcar_d: in std_logic_vector(3 downto 0); -- Auto-refresh period
-			cfg_sdr_twr_d: in std_logic_vector(3 downto 0); -- Write recovery delay
-			cfg_sdr_rfsh: in std_logic_vector(11 downto 0);
-			cfg_sdr_rfmax: in std_logic_vector(2 downto 0)
-
-	);
-	end component;
+	------------------------------------------------
+	-- Configuration Parameter
+	------------------------------------------------
+	sdr_init_done: out std_logic; -- Indicate SDRAM Initialisation Done
+	cfg_sdr_tras_d: in std_logic_vector(3 downto 0); -- Active to precharge delay
+	cfg_sdr_trp_d: in std_logic_vector(3 downto 0); -- Precharge to active delay
+	cfg_sdr_trcd_d: in std_logic_vector(3 downto 0); -- Active to R/W delay
+	cfg_sdr_en: in std_logic; -- Enable SDRAM controller
+	cfg_req_depth: in std_logic_vector(1 downto 0); --Maximum Request accepted by SDRAM controller
+	cfg_sdr_mode_reg: in std_logic_vector(12 downto 0);
+	cfg_sdr_cas: in std_logic_vector(2 downto 0); -- SDRAM CAS Latency
+	cfg_sdr_trcar_d: in std_logic_vector(3 downto 0); -- Auto-refresh period
+	cfg_sdr_twr_d: in std_logic_vector(3 downto 0); -- Write recovery delay
+	cfg_sdr_rfsh: in std_logic_vector(11 downto 0);
+	cfg_sdr_rfmax: in std_logic_vector(2 downto 0)
+    );
+    end component;
 	
     -- Top 4 bits of the address that are used in address decoding.
     constant BRAM_ADDR_TOP: std_logic_vector := x"0";
@@ -180,8 +179,7 @@ architecture structural of top_synth is
     signal sdram_bus_rdata: std_logic_vector(31 downto 0);
     signal sdram_bus_ready, sdram_valid, sdram_cs, sdram_ack: std_logic;
     signal sdram_cs_read: std_logic;
-    signal sdram_bus_access_state: std_logic_vector(1 downto 0);
-	signal sdram_init_done : std_logic;
+    signal sdr_init_done: std_logic;
 
     signal sio_cs, sio_break: std_logic;
     signal sio_bus_rdata: std_logic_vector(31 downto 0);
@@ -248,46 +246,48 @@ begin
     );
 
     sdram_controller: sdrc_top
-				      port map(sdram_clk => clk,
-								sdram_resetn => resetn,
-								cfg_sdr_width => "01",
-								cfg_colbits => "01",
-								
-								wb_rst_i => reset,
-								wb_clk_i => clk,
-								wb_stb_i => sdram_cs,
-								wb_ack_o => sdram_ack,
-								wb_addr_i => bus_addr(25 downto 0),
-								wb_we_i => bus_write,
-								wb_dat_i => bus_wdata,
-								wb_sel_i => bus_wstrb,
-								wb_dat_o => sdram_bus_rdata,
-								wb_cyc_i => sdram_cs,
-								wb_cti_i => "000",
-								
-								sdr_cke => sdram_cke,
-								sdr_cs_n => sdram_csn,
-								sdr_ras_n => sdram_rasn,
-								sdr_cas_n => sdram_casn,
-								sdr_we_n => sdram_wen,
-								sdr_dqm => sdram_dqm,
-								sdr_ba => sdram_ba,
-								sdr_addr => sdram_a,
-								sdr_dq => sdram_d,
-								
-								sdr_init_done => sdram_init_done,
-								cfg_sdr_tras_d => "0001",
-								cfg_sdr_trp_d => "0001",
-								cfg_sdr_trcd_d => "0001",
-								cfg_sdr_en => '1', 
-								cfg_req_depth => "01",
-								cfg_sdr_mode_reg => "0000000100001",
-								cfg_sdr_cas => "011",
-								cfg_sdr_trcar_d => "0010",
-								cfg_sdr_twr_d => "0010",
-								cfg_sdr_rfsh => "001000000000",
-								cfg_sdr_rfmax => "010" 
-								);
+    port map(
+	sdram_clk => clk,
+	sdram_resetn => resetn,
+	cfg_sdr_width => "01",
+	cfg_colbits => "01",
+
+	wb_rst_i => reset,
+	wb_clk_i => clk,
+	wb_stb_i => sdram_cs,
+	wb_ack_o => sdram_ack,
+	wb_addr_i => bus_addr(25 downto 0),
+	wb_we_i => bus_write,
+	wb_dat_i => bus_wdata,
+	wb_sel_i => bus_wstrb,
+	wb_dat_o => sdram_bus_rdata,
+	wb_cyc_i => sdram_cs,
+	wb_cti_i => "000",
+
+	sdr_cke => sdram_cke,
+	sdr_cs_n => sdram_csn,
+	sdr_ras_n => sdram_rasn,
+	sdr_cas_n => sdram_casn,
+	sdr_we_n => sdram_wen,
+	sdr_dqm => sdram_dqm,
+	sdr_ba => sdram_ba,
+	sdr_addr => sdram_a,
+	sdr_dq => sdram_d,
+
+	sdr_init_done => sdr_init_done,
+
+	cfg_sdr_tras_d => "0001",
+	cfg_sdr_trp_d => "0001",
+	cfg_sdr_trcd_d => "0001",
+	cfg_sdr_en => '1',
+	cfg_req_depth => "01",
+	cfg_sdr_mode_reg => "0000000100001",
+	cfg_sdr_cas => "011",
+	cfg_sdr_trcar_d => "0010",
+	cfg_sdr_twr_d => "0010",
+	cfg_sdr_rfsh => "001000000000",
+	cfg_sdr_rfmax => "010"
+    );
 
     -- SDRAM clock is also 50 MHz but phase shifted by 90 degrees
     clkgen_inst: pll_sdram_1
@@ -346,10 +346,8 @@ begin
 	end if;
     end process;
 
-    bus_ready <= rom_bus_ready or sdram_bus_ready or ram_bus_ready
+    bus_ready <= rom_bus_ready or ram_bus_ready or sdram_ack
       or mmio_bus_ready or unmapped_bus_ready;
-
-	sdram_bus_ready <= sdram_ack;
 
     -- f32c SIO
     sio_instance: entity work.sio

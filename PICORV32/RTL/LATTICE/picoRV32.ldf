@@ -12,9 +12,6 @@
         <Source name="../CUSTOM/ram_memory.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
-        <Source name="../CUSTOM/sdram.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
         <Source name="pll_sdram_1.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
@@ -46,6 +43,36 @@
             <Options/>
         </Source>
         <Source name="../../../../f32c/rtl/soc/sio.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/top/sdrc_top.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_ctl.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_fsm.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_bs_convert.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_core.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_define.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_req_gen.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_xfr_ctl.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/wb2sdrc/wb2sdrc.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/lib/async_fifo.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../../../CONSTRAINTS/ulx3s.lpf" type="Logic Preference" type_short="LPF">
