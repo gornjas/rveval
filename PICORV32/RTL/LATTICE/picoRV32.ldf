@@ -2,7 +2,10 @@
 <BaliProject version="3.2" title="picoRV32" device="LFE5U-12F-6BG381C" default_implementation="impl">
     <Options/>
     <Implementation title="impl" dir="impl" description="impl" synthesis="synplify" default_strategy="Strategy1">
-        <Options def_top="top_synth" top="top_synth"/>
+        <Options def_top="top_synth">
+            <Option name="include path" value="../CUSTOM/SDRAM/core"/>
+            <Option name="top" value="top_synth"/>
+        </Options>
         <Source name="top_synth.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="top_synth"/>
         </Source>
@@ -58,9 +61,6 @@
             <Options/>
         </Source>
         <Source name="../CUSTOM/SDRAM/core/sdrc_core.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_define.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../CUSTOM/SDRAM/core/sdrc_req_gen.v" type="Verilog" type_short="Verilog">
