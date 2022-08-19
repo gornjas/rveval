@@ -210,11 +210,6 @@ begin
     bus_write <= bus_valid when bus_wstrb /= "0000" else '0';
 
     rom: entity work.rom
-    generic map (
-	C_arch => ARCH_RV32,
-	C_big_endian => false,
-	C_boot_spi => false
-    )
     port map (
 	clk => clk,
 	strobe => rom_cs,
