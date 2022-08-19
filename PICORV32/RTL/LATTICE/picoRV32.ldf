@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <BaliProject version="3.2" title="picoRV32" device="LFE5U-25F-6BG381C" default_implementation="impl">
-=======
-<BaliProject version="3.2" title="picoRV32" device="LFE5U-45F-6BG381C" default_implementation="impl">
->>>>>>> upstream/main
     <Options/>
     <Implementation title="impl" dir="impl" description="impl" synthesis="synplify" default_strategy="Strategy1">
         <Options def_top="top_synth">
@@ -13,67 +9,31 @@
         <Source name="top_synth.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="top_synth"/>
         </Source>
+        <Source name="pll_sdram_1.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
         <Source name="../PICORV32/picorv32.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../CUSTOM/ram_memory.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
-<<<<<<< HEAD
-=======
-        <Source name="../CUSTOM/sdram.vhd" type="VHDL" type_short="VHDL" excluded="TRUE">
-            <Options/>
-        </Source>
->>>>>>> upstream/main
-        <Source name="pll_sdram_1.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
         <Source name="../CUSTOM/SDRAM/top/sdrc_top.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_ctl.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_fsm.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_bs_convert.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_core.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_req_gen.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_xfr_ctl.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/wb2sdrc/wb2sdrc.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/lib/async_fifo.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/rom.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/sio.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_ctl.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_fsm.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_bs_convert.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../CUSTOM/SDRAM/core/sdrc_core.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
         <Source name="../CUSTOM/SDRAM/core/sdrc_define.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_ctl.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_bank_fsm.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_bs_convert.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/SDRAM/core/sdrc_core.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../CUSTOM/SDRAM/core/sdrc_req_gen.v" type="Verilog" type_short="Verilog">
@@ -88,13 +48,13 @@
         <Source name="../CUSTOM/SDRAM/lib/sync_fifo.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../CUSTOM/SDRAM/top/sdrc_top.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
         <Source name="../CUSTOM/SDRAM/wb2sdrc/wb2sdrc.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="pll2/pll_sdram_2/pll_sdram_2.v" type="Verilog" type_short="Verilog">
+        <Source name="../CUSTOM/rom.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../CUSTOM/sio.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
         <Source name="../../../CONSTRAINTS/ulx3s.lpf" type="Logic Preference" type_short="LPF">
